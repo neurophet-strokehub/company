@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>3D FlipBook</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .solid-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flip-book-container solid-container" src="src/FoxitPdfSdk.pdf">
+
+    </div>
+
+
+    <div class="solid-container">
+    </div>
+
+
+    <script src="src/js/jquery.min.js"></script>
+    <script src="src/js/html2canvas.min.js"></script>
+    <script src="src/js/three.min.js"></script>
+    <script src="src/js/pdf.min.js"></script>
+
+    <script src="src/js/3dflipbook.min.js"></script>
+    <!-- To create 3D FlipBook from PDF -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.solid-container').FlipBook({
+                pdf: 'images/book/pdf/01.pdf'
+            });
+        });
+    </script>
+    <!-- To create 3D FlipBook from images -->
+    <!-- <script type="text/javascript">
+            $('.solid-container').FlipBook({
+                pageCallback: function (n) {
+                    return {
+                        type: 'image',
+                        src: 'src/theKingIsBlack/' + (n + 1) + '.jpg',
+                        interactive: false
+                    };
+                },
+                pages: 40
+            });
+        </script> -->
+    <!-- To create 3D FlipBook from HTMLs -->
+    <!-- <script type="text/javascript">
+        $('.solid-container').FlipBook({
+            pageCallback: function (n) {
+                return {
+                    type: 'html',
+                    src: 'src/preview/' + (n % 3 + 1) + '.html',
+                    interactive: true
+                };
+            },
+            pages: 10
+        });
+    </script> -->
+</body>
+
+</html>
